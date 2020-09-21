@@ -1,0 +1,377 @@
+/* --------------------------------------------------------
+Style Sheet for Favorite Guitarists
+version: 1.5.0
+last modified: 9.17.2020 by Brian Kidd
+author: Brian Kidd
+email: brian.kidd.one@gmail.com
+for website: briansfavguitarist.com
+personal website: briankiddmedia.com
+-----------------------------------------------------------*/
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+/***************** Animations *********************/
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+/*************** header section with nav ***********
+************************************************** */
+
+#container {
+	margin: 5px 5px 5px 5px;
+}
+header {
+	background-color: #2289AB;
+	height: 300px;
+	text-align: center;
+	width: 100%;
+}
+#logo {
+	position: absolute;
+	width: 120px;
+	height: auto;
+}
+nav {
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.main-nav {
+	list-style-type: none;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	width: 100%;
+}
+#siteTitle {
+	margin-top: 50px;
+	font-size: 3em;
+	color: #e6ffff;
+}
+#siteTitleMobile {
+	display: none;
+}
+.nav-item {
+	display: flex;
+	font-size: 2em;
+}
+/*******************subnav******************/
+
+#subnav {
+	position: absolute;
+	display: none;
+	flex-direction: row;
+	width: 50%;
+	left: 0;
+	right: 0;
+	margin-top: -20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	justify-content: space-around;
+	background-color: #2F535E;
+	font-size: 1.5em;
+	animation-name: fadeIn;
+	animation-duration: 2s;
+}
+#subnav a {
+	color: #33CCFF;
+}
+.navbar-toggle {
+	display: none;
+}
+/*************Main Content ************
+ *********************/
+
+/***************** Grid ******************/
+
+#mainContent {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-auto-columns: minmax(200px, auto);
+	grid-auto-rows: minmax(40px, auto);
+}
+.grid-item {
+	position: relative;
+	font-size: 25px;
+	padding: 10px;
+	background-color: #72C7E3;
+	color: #2F535E;
+	border: 1px solid white;
+}
+.grid-item-1 {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	grid-column: span 3;
+}
+.grid-item-2 {
+	grid-column: span 5;
+}
+.grid-item-2 h2 {
+	text-align: center;
+	text-decoration: underline;
+	margin-bottom: 5px;
+}
+.grid-item-2 p {
+	text-indent: 20px;
+	font-size: .75em;
+	margin-bottom: 5px;
+}
+.grid-item-3 {
+	grid-column: span 4;
+}
+.grid-item-3 h2 {
+	text-align: center;
+	text-decoration: underline;
+}
+.grid-item-3 h4 {
+	text-align: center;
+	margin-top: 5px;
+}
+.grid-item-2 img {
+	display: none;
+}
+.grid-item-3 a h4 {
+	color: #2F535E;
+}
+.grid-item-3 a h4:hover {
+	color: #e6ffff;
+}
+.grid-item-3 a h4:visited {
+	color: #e6ffff;
+}
+
+section#about {
+	display: grid;
+	grid-column: span 12;
+}
+section#about h2 {
+	text-align: center;
+}
+section#demos {
+	display: grid;
+	grid-column: span 12;
+}
+section#demos h2 {
+	text-align: center;
+}
+
+footer {
+	height: 40px;
+	grid-column: span 12;
+	background-color: #2289AB;
+}
+
+/************ read more ***************/
+
+.more {
+	display: none;
+}
+.showText {
+	display: grid;
+}
+.read-more {
+	cursor: pointer;
+	padding: 5px;
+	background-color: #2289AB;
+	color:#e6ffff;
+}
+/************** links *******************/
+
+a:link {
+	text-decoration: none;
+	color: #72C7E3;
+}
+a:visited {
+	text-decoration: none;
+	color: #72C7E3;
+}
+a:hover {
+	color: #33CCFF;
+}
+
+/********************** audio *********************/
+.audio-container {
+	width: 100%;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+}
+audio {
+	width: 90%;
+	height: 40px;
+}
+/**************Media Queries*******************
+*********************************************/
+
+@media only screen and (max-width: 1200px) {
+	/*************** header section with nav ***********
+************************************************** */
+	/*******************subnav******************/
+	#subnav {
+		flex-direction: column;
+		width: 200px;
+	}
+	.grid-item-1 img { 
+		width: 100%;
+		height: auto;
+		border: 1px solid #e6ffff;;
+	}
+	.grid-item-2 {
+		grid-column: span 9;
+	}
+	.grid-item-3 {
+		grid-column: span 12;
+	}
+}
+@media only screen and (max-width: 1024px) {
+	#container {
+		margin: 0;
+	}
+	header {
+		height: 250px;
+	}
+	#siteTitle {
+		font-size: 2.5em;
+	}
+	#logo {
+		position: absolute;
+		left: -10px;
+		width: 100px;
+		height: auto;
+	}
+	.grid-item-1 {
+		display: none;
+	}
+	.grid-item-2 {
+		grid-column: span 12;
+	}
+	.grid-item-2 img {
+		display: grid;
+		float:left;
+		margin-right: 5px;
+		margin-bottom: 5px;
+	}
+	.grid-item-3 {
+		grid-column: span 12;
+	}	
+}
+@media only screen and (max-width: 768px) {
+	header {
+		height: 225px;
+	}
+	.main-nav {
+		font-size: .85em;
+	}
+	#siteTitle {
+		font-size: 2.25em;
+	}
+	#logo {
+		width: 90px;
+		height: auto;
+	}
+}
+@media only screen and (max-width: 640px) {
+	#container {
+		margin: 0;
+	}
+	header {
+		height: 225px;
+	}
+	.main-nav {
+		display: none;
+		position: absolute;
+		background-color: #2F535E;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		top: 45px;
+		width: 200px;
+		z-index: 1;
+	}
+	#subnav {
+		display: none;
+		position: absolute;
+		top: 150px;
+		background-color: #2F535E;
+		width: 225px;
+		z-index: 1;
+	}
+	#subnav a {
+		color: #72C7E3;
+	}
+	.nav-item {
+		display: block;
+		font-size: 1.75em;
+	}
+	#siteTitle {
+		font-size: 2em;
+	}
+	.nav-item:nth-child(1) {
+		order: 1;
+	}
+	.nav-item:nth-child(2) {
+		order: 3;
+	}
+	.nav-item:nth-child(3) {
+		order: 2;
+	}
+	#siteTitle {
+		font-size: 2.5em;
+	}
+	#logo {
+		position: absolute;
+		left: -10px;
+		width: 90px;
+		height: auto;
+	}
+	.navbar-toggle {
+		display: flex;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		display: block;
+		margin: 0 auto;
+		cursor: pointer;
+		color: #e6ffff;
+		font-size: 24px;
+	}
+	#siteTitle {
+		position: relative;
+		top: 40px;
+		font-size: 1.85em;
+	}
+	.grid-item-2  {
+		display: grid;
+		justify-items: center;
+		align-items: center;
+	}
+	.active {
+		display: flex;
+		flex-direction: column;
+	}
+}
+@media only screen and (max-width: 540px) {
+	#siteTitle {
+		display: none;
+	}
+	#siteTitleMobile {
+		display: block;
+		color: #e6ffff;
+		position: relative;
+		top: 40px;
+		font-size: 1.85em;
+	}
+}
